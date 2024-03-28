@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+import Notiflix from 'notiflix';
 axios.defaults.headers.common['x-api-key'] =
   'live_nHFCtRCXEHoxdoOexwvc6nseyCJvEJW44qn0NJEH9brXeDtqKsZHCwxKjRSxkLeZ';
 
@@ -37,7 +37,9 @@ function hideLoader() {
 
 // Función para mostrar el mensaje de error
 function showError() {
-  document.querySelector('.error').style.display = 'block';
+  Notiflix.Notify.failure(
+    'Oops! Something went wrong! Try reloading the page!'
+  );
 }
 
 // Función para ocultar el mensaje de error
@@ -56,7 +58,6 @@ function updateCatInfo(catData) {
    
   `;
 }
-
 // Evento al cambiar la selección de raza
 document
   .querySelector('.breed-select')
